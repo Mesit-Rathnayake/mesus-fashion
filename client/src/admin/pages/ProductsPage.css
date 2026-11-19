@@ -1,0 +1,148 @@
+.admin-products {
+    width: 100%;
+}
+
+.products-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.products-heading span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.products-heading h1 {
+    margin: 12px 0;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.products-heading p {
+    color: #777;
+    font-size: 14px;
+}
+
+.add-product-button {
+    padding: 13px 20px;
+    background: #171717;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.products-toolbar {
+    margin: 35px 0 20px;
+}
+
+.products-toolbar input {
+    width: 100%;
+    max-width: 400px;
+    padding: 13px 15px;
+    border: 1px solid #ddd;
+    background: white;
+    outline: none;
+}
+
+.products-table-wrapper {
+    overflow-x: auto;
+    background: white;
+    border: 1px solid #e9e7e2;
+}
+
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 650px;
+}
+
+.products-table th,
+.products-table td {
+    padding: 17px 20px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+.products-table th {
+    color: #777;
+    font-weight: 500;
+    background: #fafafa;
+}
+
+.product-name-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+}
+
+.product-name-cell img {
+    width: 48px;
+    height: 58px;
+    object-fit: cover;
+}
+
+.product-status {
+    padding: 5px 9px;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+}
+
+.product-status.published {
+    background: #e5f2e8;
+    color: #28633a;
+}
+
+.product-status.draft {
+    background: #f0eee8;
+    color: #777;
+}
+
+.product-status.archived {
+    background: #eee9e9;
+    color: #855;
+}
+
+.delete-product-button {
+    border: none;
+    background: transparent;
+    color: #b33;
+    cursor: pointer;
+}
+
+.products-error {
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #fbeaea;
+    color: #a22;
+}
+
+.products-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    color: #777;
+    font-size: 13px;
+}
+
+.products-pagination div {
+    display: flex;
+    gap: 8px;
+}
+
+.products-pagination button {
+    padding: 9px 14px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+}
+
+.products-pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}

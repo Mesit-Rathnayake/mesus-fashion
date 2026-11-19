@@ -6,6 +6,12 @@ import {
 
 import ProtectedRoute from "./components/ProtectedRoute";
 import GuestRoute from "./components/GuestRoute";
+import AdminRoute from "./components/AdminRoute";
+
+import AdminLayout from "./admin/layouts/AdminLayout";
+import DashboardPage from "./admin/pages/DashboardPage";
+import ProductsPage from "./admin/pages/ProductsPage";
+import CreateProductPage from "./admin/pages/CreateProductPage";
 
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
@@ -30,6 +36,15 @@ function App() {
                 {/* Protected routes */}
                 <Route element={<ProtectedRoute />}>
                     <Route path="/account" element={<AccountPage />} />
+                </Route>
+
+                {/* Admin routes */}
+                <Route element={<AdminRoute />}>
+                    <Route path="/admin" element={<AdminLayout />}>
+                        <Route index element={<DashboardPage />} />
+                        <Route path="products" element={<ProductsPage />} />
+                        <Route path="products/new" element={<CreateProductPage />} />
+                    </Route>
                 </Route>
 
                 {/* Fallback route */}
