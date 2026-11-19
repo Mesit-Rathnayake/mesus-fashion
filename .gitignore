@@ -18,3 +18,5 @@ coverage/
 .idea/
 
 *.sqlite
+
+server/uploads/

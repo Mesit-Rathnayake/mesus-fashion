@@ -1,4 +1,5 @@
 import express from "express";
+import path from "node:path";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
@@ -7,6 +8,7 @@ import { prisma } from "./config/prisma.js";
 import authRoutes from "./modules/auth/auth.routes.js";
 import productRoutes from "./modules/products/product.routes.js";
 import categoryRoutes from "./modules/categories/category.routes.js";
+import uploadRoutes from "./modules/uploads/upload.routes.js";
 
 const app = express();
 
@@ -20,9 +22,14 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(morgan("dev"));
 
+app.use("/uploads", express.static(
+    path.resolve(process.cwd(), "uploads")
+));
+
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/categories", categoryRoutes);
+app.use("/api/uploads", uploadRoutes);
 
 app.get("/api/health", (req, res) => {
     res.status(200).json({
